@@ -46,7 +46,7 @@ import java.util.List;
  */
 public class EditControlPopup {
     private final Context context;
-    protected final Spinner[] mKeycodeSpinners = new Spinner[4];
+    protected final Spinner[] mKeycodeSpinners = new Spinner[6]; // CHANGED: 4 -> 6
     private KeyboardDialog keyboardDialog;
     private final DefocusableScrollView mScrollView;
     private final ColorSelector mColorSelector;
@@ -78,7 +78,7 @@ public class EditControlPopup {
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     protected Switch mToggleSwitch, mPassthroughSwitch, mSwipeableSwitch, mForwardLockSwitch, mAbsoluteTrackingSwitch;
     protected Spinner mOrientationSpinner;
-    protected TextView[] mKeycodeTextviews = new TextView[4];
+    protected TextView[] mKeycodeTextviews = new TextView[6]; // CHANGED: 4 -> 6
     protected SeekBar mStrokeWidthSeekbar, mCornerRadiusSeekbar, mAlphaSeekbar;
     protected TextView mStrokePercentTextView, mCornerRadiusPercentTextView, mAlphaPercentTextView;
     protected TextView mSelectBackgroundColor, mSelectStrokeColor;
@@ -391,14 +391,23 @@ public class EditControlPopup {
         mSwipeableSwitch = mScrollView.findViewById(R.id.checkboxSwipeable);
         mForwardLockSwitch = mScrollView.findViewById(R.id.checkboxForwardLock);
         mAbsoluteTrackingSwitch = mScrollView.findViewById(R.id.checkboxAbsoluteFingerTracking);
+        
+        // CHANGED: Added spinner 5 and 6
         mKeycodeSpinners[0] = mScrollView.findViewById(R.id.editMapping_spinner_1);
         mKeycodeSpinners[1] = mScrollView.findViewById(R.id.editMapping_spinner_2);
         mKeycodeSpinners[2] = mScrollView.findViewById(R.id.editMapping_spinner_3);
         mKeycodeSpinners[3] = mScrollView.findViewById(R.id.editMapping_spinner_4);
+        mKeycodeSpinners[4] = mScrollView.findViewById(R.id.editMapping_spinner_5);
+        mKeycodeSpinners[5] = mScrollView.findViewById(R.id.editMapping_spinner_6);
+        
+        // CHANGED: Added textview 5 and 6
         mKeycodeTextviews[0] = mScrollView.findViewById(R.id.mapping_1_textview);
         mKeycodeTextviews[1] = mScrollView.findViewById(R.id.mapping_2_textview);
         mKeycodeTextviews[2] = mScrollView.findViewById(R.id.mapping_3_textview);
         mKeycodeTextviews[3] = mScrollView.findViewById(R.id.mapping_4_textview);
+        mKeycodeTextviews[4] = mScrollView.findViewById(R.id.mapping_5_textview);
+        mKeycodeTextviews[5] = mScrollView.findViewById(R.id.mapping_6_textview);
+        
         mOrientationSpinner = mScrollView.findViewById(R.id.editOrientation_spinner);
         mStrokeWidthSeekbar = mScrollView.findViewById(R.id.editStrokeWidth_seekbar);
         mCornerRadiusSeekbar = mScrollView.findViewById(R.id.editCornerRadius_seekbar);
